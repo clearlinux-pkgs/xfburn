@@ -1,0 +1,188 @@
+xfburn 0.5.5 (2017-12-14)
+============-------------
+
+- Use gstreamer discovere api to get track duration
+- Update xfburn icon in desktop-integration and main windows
+- Do not use deprecated media-cdrom Icon (Bug #12233)
+- Add appdata file (Bug #11201)
+- Add GenericName in xfburn.desktop.in (Bug #12170)
+- Do no open data-composition when running --audio-composition (Bug #13251)
+- Improve error message when a plugin is missing.
+- Missing strings in translations (Bug #11291)
+- Translation Updates: Arabic, Asturian, Bulgarian, Catalan, Czech, Danish, German, Greek, English (Australia), English (United Kingdom), Spanish, Estonian, Basque, Finnish, French, Galician, Hebrew, Croatian, Hungarian, Indonesian, Icelandic, Italian, Japanese, Kazakh, Korean, Lithuanian, Malay, Norwegian Bokmål, Dutch, Norwegian Nynorsk, Occitan (post 1500), Polish, Portuguese, Portuguese (Brazil), Russian, Sinhala, Slovak, Serbian, Swedish, Telugu, Thai, Turkish, Uighur, Ukrainian, Chinese (China), Chinese (Taiwan)
+
+xfburn 0.5.4 (2015-05-16)
+============-------------
+
+- Some autoconf modernization
+- Use gstreamer 1.0 api
+- Restore broken icons
+
+xfburn 0.5.2 (2014-04-09)
+============-------------
+
+- Blu-Ray support
+- Large file support (iso9660 level 3)
+- Small bugfixes
+
+Many thanks to Thomas Schmitt who supplied numerous patches and much debugging
+help to make this release with BluRay support possible.
+
+xfburn 0.5.0 (2014-02-20)
+============-------------
+
+- Transition to non-deprecated libraries:
+  - gio
+  - libxfce4ui
+  Now it should build fine on modern systems again.
+  Work done by Jan Rękorajski <baggins@pld-linux.org> and Skunnyk
+  <skunnyk@archlinux.fr> -- Thanks!
+- New icon by Simon Steinbeiß <simon.steinbeiss@gmail.com>
+- Bugfixes, with some help of Christoph Wickert, Samuli Suominen, and
+  Lionel Le Folgoc.
+- Hide file browser and toolbar by default (it may be removed in future
+  versions).
+
+xfburn 0.4.3 (2010-02-12)
+============-------------
+
+- Fall back gracefully to use libburn when compiled with HAL support but 
+  when the HAL daemon is not running.
+- Again show the volume name in the burn dialog if it has the default value
+- By default let libburn autodetect the write mode
+- Fix a crash after burning is complete
+- Fix a crash when adding files to a composition which was non-empty
+- Don't ask unlimited number of times if a disc should get blanked
+- Always check for mounted discs before using the drive
+
+xfburn 0.4.2 (2009-07-23)
+============-------------
+
+- Internal updates in preparation for better handling of disc detection
+- Handle drag and drop of filenames with spaces from nautilus (closes #4992)
+- Insert dragged file dropped on top of another file instead of crashing
+  (closes #5299)
+- Properly detect the available space on an audio CD (closes #5302)
+- Track ownership of tracks in compositions correctly (closes #5303)
+- Resample audio files with gstreamer if necessary (closes #5304)
+- Show symbolic links in the file browser (closes #5430)
+- Implement the "show hidden files" option (closes #5500)
+
+
+xfburn 0.4.1 (2009-02-25)
+============-------------
+
+- When thunar-vfs is not present, Completely disable drag and drop from 
+  Thunar (and other file managers). Otherwise gtk complains (and potentially
+  causes errors).
+- Adding directories to a composition from within xfburn works again.
+- Bump libburn version requirement to 0.5.6, since earlier versions might
+  trigger a crash in libburn's fifo code. Version 0.4.2 or later will work,
+  aside from this problem.
+- Correctly detect some burners for which HAL reported unexpected values.
+- Fall back to libburn-based burner detection if HAL does not find any.
+- A man page is now included.
+
+
+xfburn 0.4.0 (2008-12-20)
+============-------------
+
+- Display an error if gstreamer realizes a plugin is missing to decode a file
+- Jean-François Wauthy officially retired as maintainer. Thank you for all the
+  work, p0llux!
+- Add symlink as symlink, and not the referenced files to a data composition
+- Allow adding hidden files and devices to the composition through the
+  command line (they are not shown in the file selector)
+- Add an entry to Thunar's sendto menu for adding to a data composition
+  (thanks Mike Massonnet)
+- Add directories to a data composition with the correct timestamp 
+  (thanks JR Oldroyd for discovering this)
+- Stop button works now
+- Drag and drop into an audio composition now adds files in the correct order
+- Check that the size of the burn run actually fits on the inserted disc
+- Internal and string improvements
+
+xfburn 0.3.91 (2008-11-03)
+=============------------
+
+- Use gstreamer to decompress any supported audio files to burn an audio CD ("gst" transcoder)
+  NOTE: support for this is new, and not too unlikely to have some bugs ;-)
+- Burn audio CDs from uncompressed CD audio .wav files ("basic" transcoder)
+- Allow drags and drop from file managers like Thunar (text/uri-list target)
+- Require HAL if compiled with HAL support
+- Try to unmount a drive if it is not accessible (requires thunar-vfs)
+- Build list of drives initially from HAL, then fill in details using libburn
+  once the burn dialog shows up
+
+xfburn 0.3.2 (2008-07-15)
+============-------------
+
+- Also set burn speed when burning an image
+- Fix bug which would complain about missing speed list when blanking
+  after the question from the burn composition dialog
+- Bugfix: wait in main() to let the dialogs run when there is no main 
+  window
+- Update many translations
+
+xfburn 0.3.1 (2008-07-10)
+============-------------
+
+- Implemented basic CLI options
+- Actually set speed in burn backend
+
+  WARNING: my dvd test burn failed if a speed was set!! CD was ok though.
+
+  Use "Max" as speed if that is the case for you to get the old behavior,
+  and _please_ report this as a bug! Please include the console output if
+  debug is enabled, or otherwise some info on the burner that was used.
+- Use fifo buffering, default is 4MB, adjustable in the preferences
+- Preserve file attributes
+- Now using threads for adding files, and the adding can get aborted
+- If the burning dialog comes up with a full but erasable disc in the drive,
+  prompt to show the blanking dialog
+
+xfburn 0.3.0
+============
+
+- Use new libisofs API
+- DVD burning
+- Formating and deformating of DVD-RW discs
+- Removed buttons for not yet working functionality
+- Use HAL to update disc status when a disc is inserted / removed
+- Disable "Burn composition" button where there is no files in composition
+
+- Use libburn (libburnia-project.org) instead of cdrecord tools
+- Avoid adding non regular files (bug #2179)
+- Directory are sort before files in data composition
+- Fix segfault when removing a file and one of its parent directory together
+- Try to use media-optical and media-cdrom as themable icon before gtk-cdrom in order to avoid crappy png icon being shown in Preferences dialog
+- Fix icon size in filesystem browser
+- Add icons for actions based on icons from the Tango icontheme
+- Detect and sort supported write speeds (#4012)
+- Add support for writing ISO from a composition using libburn
+- Add support for burning a composition using libburn
+- Use correct cdrom size (bug #2753)
+- Add new icons based on icons from the Tango icontheme
+- List columns are resizable now (bug #2930)
+
+xfburn 0.2.0beta
+================
+
+- Use g_type_class_add_private everywhere
+- Data composition and file browser use ExoTreeView instead of GtkTreeView
+- Add DnD inside data composition
+- Prevent having two 'New directory' entries in a data composition
+- Add support of SAO mode (bug #2121)
+- Add create directory action in data composition
+- Prevent usage of empty filename in data composition
+- Fix xfburn.desktop Categories entry as suggested by Charles A Edwards <eslrahc@bellsouth.net>
+- Implement the add button in the data composition toolbar (bug #2097)
+- Avoid segfault on exit when ~/.config/xfburn doesn't exist (bug #2095)
+- Prevent cdrecord failure if there is a space in the path to an iso (bug #1198)
+
+xfburn 0.1.0alpha
+=================
+
+- First public release
+- Supports cdrw blanking, cd copying, creating iso, composition of files
+
