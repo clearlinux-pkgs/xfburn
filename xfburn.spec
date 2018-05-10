@@ -4,7 +4,7 @@
 #
 Name     : xfburn
 Version  : 0.5.5
-Release  : 3
+Release  : 4
 URL      : http://archive.xfce.org/src/apps/xfburn/0.5/xfburn-0.5.5.tar.bz2
 Source0  : http://archive.xfce.org/src/apps/xfburn/0.5/xfburn-0.5.5.tar.bz2
 Summary  : No detailed summary available
