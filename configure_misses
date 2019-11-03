@@ -1,2 +1,2 @@
-Configure miss: exo-0.3 >= 0.3.4
+Configure miss: exo-0.3 >= 0.11.0
 Configure miss: optional package gudev-1.0 >= 145
