@@ -1,3 +1,19 @@
+commit 50c1e55fd0340ebc54389c63bcdd4cba926ff213
+Author: Rene Kjellerup <rk.katana.steel@gmail.com>
+Date:   Sun Nov 3 08:42:22 2019 -0800
+
+    added po skip for xfburn.ui
+
+commit 7b2785d25c8c2e10e4efc24c16ba72819c7e378c
+Author: Kjell Cato Heskjestad <cato@heskjestad.xyz>
+Date:   Sun Nov 3 12:31:33 2019 +0100
+
+    I18n: Update translation nb (100%).
+    
+    281 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
 commit efb9f19230ca4ae0350c7081547639b00af2e335
 Author: Rene Kjellerup <rk.katana.steel@gmail.com>
 Date:   Sun Nov 3 01:06:41 2019 -0700
