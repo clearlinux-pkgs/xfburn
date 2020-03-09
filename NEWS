@@ -1,3 +1,25 @@
+0.6.2
+======
+- added udev property ID_REVISION as a fallback
+- storing revision information in XfburnDevice
+- added missing xml header
+- Updated Data Composition to define the context menu from file (3/3)
+- Updated Audio Composition to define context menu from file (2/3)
+- Adding a popup UI file for context menus (1/3)
+- code clean up for deprecated Glib/Gtk+ Widget definitions
+- update AppData to AppStream and project URLs all around
+- Add missing translate tags in xfburn.ui
+- Make a bunch of strings translatable
+- fixed double translateable on Help label
+- Make xfburn.ui translatable
+- post release version bump
+- Translation Updates:
+  , Albanian, Basque, Bulgarian, Catalan, Chinese (China), Chinese
+  (Taiwan), Croatian, Czech, Danish, Dutch, French, Galician, German,
+  Greek, Hebrew, Hungarian, Italian, Japanese, Lithuanian, Malay,
+  Norwegian Bokmål, Polish, Portuguese, Portuguese (Brazil), Russian,
+  Serbian, Slovak, Slovenian, Spanish, Swedish, Turkish,
+
 xfburn 0.5.5 (2017-12-14)
 ============-------------
 
@@ -185,4 +207,3 @@ xfburn 0.1.0alpha
 
 - First public release
 - Supports cdrw blanking, cd copying, creating iso, composition of files
-
