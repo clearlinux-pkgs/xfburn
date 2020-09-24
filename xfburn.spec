@@ -4,7 +4,7 @@
 #
 Name     : xfburn
 Version  : 0.6.2
-Release  : 8
+Release  : 9
 URL      : http://archive.xfce.org/src/apps/xfburn/0.6/xfburn-0.6.2.tar.bz2
 Source0  : http://archive.xfce.org/src/apps/xfburn/0.6/xfburn-0.6.2.tar.bz2
 Summary  : A simple CD/DVD burning tool based on libburnia libraries
